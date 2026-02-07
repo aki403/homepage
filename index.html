@@ -2,24 +2,179 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" width="device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Aki.</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <nav class="sidebar">
-            <a href="#" class="sidebar__item">
-                <img src="img/home.png" class="sidebar_icon">
+            <div class="sidebar__indicator"></div>
+            <a href="#" class="sidebar__item active" id="nav-home" title="Home">
+                <img src="img/home.svg" class="sidebar__icon" alt="Home">
             </a>
-
-            <a href="#" class="sidebar__item">
-                <img src="img/home.png" class="sidebar_icon">
+            <a href="#works" class="sidebar__item" id="nav-works" title="Works">
+                <img src="img/work.svg" class="sidebar__icon" alt="Portfolio">
+            </a>
+            <a href="#skills" class="sidebar__item" id="nav-skills" title="Skills">
+                <img src="img/sparkles.svg" class="sidebar__icon" alt="Skills">
             </a>
         </nav>
-        <div class="profile">
-            <div class="profile__name">Aki.</div>
-            <div class="profile__role">Web Developer</div>
-            <div class="profile__bio">I'm new to the world of programming.</div>
+
+        <div class="page-container">
+            <main class="content-wrapper">
+                
+                <section class="profile" id="home">
+                    <div class="profile__name">Aki.</div>
+                    <div class="profile__role">Web Developer</div>
+                    <div class="profile__bio">I'm new to the world of programming.<br>> 🚧このサイトはまだ作りかけです...🚧</div>
+
+                    <div class="social-section">
+                        <a href="https://github.com" target="_blank" class="social-link">
+                            <img src="img/github.svg" alt="GitHub">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="img/x.svg" alt="X">
+                        </a>
+                    </div>
+                </section>
+
+                <section class="works" id="works">
+                    <div class="works__header">
+                        <img src="img/work.svg" class="works__icon" alt="Works Icon">
+                        <h2 class="works__title">Works</h2>
+                    </div>
+
+                    <div class="works-grid">
+                        <article class="work-card">
+                            <div class="work-card__content">
+                                <h3 class="work-card__title">Portfolio Site</h3>
+                                <p class="work-card__desc">現在作成中のポートフォリオサイトです。ダークモードを基調としたデザイン。<br>めっちゃ頑張った！</p>
+                                <div class="work-card__tags">
+                                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                                </div>
+                            </div>
+                            <a href="#" class="work-card__link"></a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="skills" id="skills">
+                    <div class="skills__header">
+                        <img src="img/sparkles.svg" class="skills__icon" alt="Skills Icon">
+                        <h2 class="skills__title">Skills & Certifications</h2>
+                    </div>
+
+                    <div class="skills__grid">
+                        <div class="skills__category">
+                            <h3 class="skills__subtitle">Web Development</h3>
+                            <div class="skills__list">
+                                <div class="skills__item">
+                                    <span class="skills__name">HTML / CSS</span>
+                                </div>
+                                <div class="skills__item">
+                                    <span class="skills__name">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills__category">
+                            <h3 class="skills__subtitle">Skiing Expertise</h3>
+                            <div class="skills__list">
+                                <div class="skills__item">
+                                    <span class="skills__name">SAJ1級</span>
+                                    <p class="skills__desc">全日本スキー連盟（SAJ）公認 スキーバッジテスト1級</p>
+                                </div>
+                                <div class="skills__item">
+                                    <span class="skills__name">SIAセミゴールド</span>
+                                    <p class="skills__desc">日本プロスキー教師協会（SIA）公認 インターナショナル・スキーテスト セミゴールド</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
         </div>
+
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <div class="footer__logo">Aki.</div>
+                    <div class="footer__copyright">©Aki. All rights reserved.</div>
+                </div>
+                <div class="footer__right">
+                    <a href="https://github.com" target="_blank" class="footer__social-link">
+                        <img src="img/github.svg" alt="GitHub">
+                    </a>
+                    <a href="#" class="footer__social-link">
+                        <img src="img/x.svg" alt="X">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+            if (history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+
+            function updateIndicator() {
+                const activeLink = document.querySelector('.sidebar__item.active');
+                const indicator = document.querySelector('.sidebar__indicator');
+                
+                if (activeLink && indicator) {
+                    const topPosition = activeLink.offsetTop + (activeLink.offsetHeight / 2) - (indicator.offsetHeight / 2);
+                    indicator.style.top = `${topPosition}px`;
+                }
+            }
+
+            window.addEventListener('load', updateIndicator);
+            window.addEventListener('resize', updateIndicator);
+
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.sidebar__item');
+                
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.scrollY >= (sectionTop - sectionHeight / 3 - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (window.scrollY < 100) {
+                    current = 'home';
+                }
+
+                let changed = false;
+
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    const wasActive = link.classList.contains('active');
+                    let shouldBeActive = false;
+
+                    if (current === 'home' && href === '#') {
+                        shouldBeActive = true;
+                    } else if (href === `#${current}`) {
+                        shouldBeActive = true;
+                    }
+
+                    if (shouldBeActive && !wasActive) {
+                        link.classList.add('active');
+                        changed = true;
+                    } else if (!shouldBeActive && wasActive) {
+                        link.classList.remove('active');
+                    }
+                });
+
+                if (changed) {
+                    updateIndicator();
+                }
+            });
+        </script>
     </body>
 </html>

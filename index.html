@@ -6,98 +6,137 @@
     <title>Aki.</title>
     <link rel="stylesheet" href="style.css">
     <meta property="og:title" content="Aki." />
-    <meta property="og:description" content="I'm new to the world of programming." />
+    <meta property="og:description" content="最近プログラミング始めたよわよわデベロッパー" />
 </head>
 <body>
     <nav class="sidebar">
         <div class="sidebar__indicator"></div>
         <a href="#" class="sidebar__item active" id="nav-home" title="Home">
             <img src="img/home.svg" class="sidebar__icon" alt="Home">
+            <span class="sidebar__label">Home</span>
         </a>
-        <a href="#works" class="sidebar__item" id="nav-works" title="Works">
-            <img src="img/work.svg" class="sidebar__icon" alt="Portfolio">
+        <a href="#project" class="sidebar__item" id="nav-project" title="project">
+            <img src="img/project.svg" class="sidebar__icon" alt="project">
+            <span class="sidebar__label">Projects</span>
         </a>
         <a href="#skills" class="sidebar__item" id="nav-skills" title="Skills">
-            <img src="img/sparkles.svg" class="sidebar__icon" alt="Skills">
+            <img src="img/star.svg" class="sidebar__icon" alt="Skills">
+            <span class="sidebar__label">Skills</span>
         </a>
     </nav>
 
     <div class="page-container">
         <main class="content-wrapper">
-            
             <section class="profile" id="home">
                 <div class="profile__name">Aki.</div>
                 <div class="profile__role">Web Developer</div>
-                <div class="profile__bio">I'm new to the world of programming.<br>> 🚧このサイトはまだ作りかけです...🚧</div>
-
+                <div class="profile__bio">最近プログラミング始めたよわよわデベロッパー<br>🚧このサイトはまだ作りかけです...🚧<br>気が向いたら更新</div>
                 <div class="social-section">
                     <a href="https://github.com/aki403" target="_blank" class="social-link">
                         <img src="img/github.svg" alt="GitHub">
                     </a>
-                    <a href="#" class="social-link">
-                        <img src="img/x.svg" alt="X">
-                    </a>
                 </div>
             </section>
 
-            <section class="works" id="works">
-                <div class="works__header">
-                    <img src="img/work.svg" class="works__icon" alt="Works Icon">
-                    <h2 class="works__title">Works</h2>
+            <section class="project" id="project">
+                <div class="project__header">
+                    <img src="img/project.svg" class="project__icon" alt="project Icon">
+                    <h2 class="project__title">Projects</h2>
                 </div>
-
-                <div class="works-grid">
-                    <article class="work-card">
-                        <div class="work-card__content">
-                            <h3 class="work-card__title">Portfolio Site</h3>
-                            <p class="work-card__desc">現在作成中のポートフォリオサイトです。ダークモードを基調としたデザイン。<br>めっちゃ頑張った！</p>
-                            <div class="work-card__tags">
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-card__content">
+                            <div class="project-card__header">
+                                <img src="img/globe.svg" class="project-card__category">
+                                <h3 class="project-card__title">Portfolio Site</h3>
+                            </div>
+                            <p class="project-card__desc">現在作成中のポートフォリオサイトです。<br>ダークモードを基調としたデザイン。<br>めっちゃ頑張った！</p>
+                            <div class="project-card__tags">
                                 <span>HTML</span><span>CSS</span><span>JavaScript</span>
                             </div>
                         </div>
-                        <a href="#" class="work-card__link"></a>
+                        <a href="#" class="project-card__link"></a>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__content">
+                            <div class="project-card__header">
+                                <img src="img/co.svg" class="project-card__category">
+                                <h3 class="project-card__title">調整中...</h3>
+                            </div>
+                            <p class="project-card__desc">調整中</p>
+                            <div class="project-card__tags">
+                                <span>調整中</span>
+                            </div>
+                        </div>
+                        <a class="project-card__link"></a>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-card__content">
+                            <div class="project-card__header">
+                                <img src="img/co.svg" class="project-card__category">
+                                <h3 class="project-card__title">調整中...</h3>
+                            </div>
+                            <p class="project-card__desc">調整中</p>
+                            <div class="project-card__tags">
+                                <span>調整中</span>
+                            </div>
+                        </div>
+                        <a class="project-card__link"></a>
                     </article>
                 </div>
             </section>
 
+
             <section class="skills" id="skills">
                 <div class="skills__header">
-                    <img src="img/sparkles.svg" class="skills__icon" alt="Skills Icon">
-                    <h2 class="skills__title">Skills & Certifications</h2>
+                    <img src="img/star.svg" class="skills__icon" alt="Skills Icon">
+                    <h2 class="skills__title">Skills</h2>
                 </div>
-
                 <div class="skills__grid">
                     <div class="skills__category">
-                        <h3 class="skills__subtitle">Languages</h3>
+                        <h3 class="skills__subtitle">言語</h3>
                         <div class="skills__list">
                             <div class="skills__item">
-                                <span class="skills__name">HTML / CSS</span>
+                                <img src="img/html5.svg" class="skills__img">
+                                <span class="skills__name">HTML5</span>
                             </div>
                             <div class="skills__item">
+                                <img src="img/css3.svg" class="skills__img">
+                                <span class="skills__name">CSS3</span>
+                            </div>
+                            <div class="skills__item">
+                                <img src="img/javascript.svg" class="skills__img">
                                 <span class="skills__name">JavaScript</span>
                             </div>
                         </div>
                     </div>
-
                     <div class="skills__category">
-                        <h3 class="skills__subtitle">Tools / Environment</h3>
+                        <h3 class="skills__subtitle">ツール / 環境</h3>
                         <div class="skills__list">
                             <div class="skills__item">
+                                <img src="img/nodejs.svg" class="skills__img">
                                 <span class="skills__name">Node.js</span>
+                            </div>
+                            <div class="skills__item">
+                                <img src="img/docker.svg" class="skills__img">
+                                <span class="skills__name">Docker</span>
                             </div>
                         </div>
                     </div>
-
                     <div class="skills__category">
-                        <h3 class="skills__subtitle">Skiing Expertise</h3>
+                        <h3 class="skills__subtitle">スキーの資格</h3>
                         <div class="skills__list">
-                            <div class="skills__item">
-                                <span class="skills__name">SAJ1級</span>
-                                <p class="skills__desc">全日本スキー連盟（SAJ）公認 スキーバッジテスト1級</p>
+                            <div class="skills__item align-start">
+                                <div class="skills__text">
+                                    <span class="skills__name">SAJ1級</span>
+                                    <p class="skills__desc">全日本スキー連盟（SAJ）公認 スキーバッジテスト1級</p>
+                                </div>
                             </div>
-                            <div class="skills__item">
-                                <span class="skills__name">SIAセミゴールド</span>
-                                <p class="skills__desc">日本プロスキー教師協会（SIA）公認 インターナショナル・スキーテスト セミゴールド</p>
+                            <div class="skills__item align-start">
+                                <div class="skills__text">
+                                    <span class="skills__name">SIAセミゴールド</span>
+                                    <p class="skills__desc">日本プロスキー教師協会（SIA）公認 インターナショナル・スキーテスト セミゴールド</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,9 +155,6 @@
                 <a href="https://github.com/aki403" target="_blank" class="footer__social-link">
                     <img src="img/github.svg" alt="GitHub">
                 </a>
-                <a href="#" class="footer__social-link">
-                    <img src="img/x.svg" alt="X">
-                </a>
             </div>
         </div>
     </footer>
@@ -132,7 +168,6 @@
         function updateIndicator() {
             const activeLink = document.querySelector('.sidebar__item.active');
             const indicator = document.querySelector('.sidebar__indicator');
-            
             if (activeLink && indicator) {
                 if (window.innerWidth > 900) {
                     const topPosition = activeLink.offsetTop + (activeLink.offsetHeight / 2) - (16);
@@ -158,35 +193,27 @@
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.sidebar__item');
-            
             let current = '';
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                
                 if (window.scrollY >= (sectionTop - sectionHeight / 3 - 200)) {
                     current = section.getAttribute('id');
                 }
             });
-
             if (window.scrollY < 100) {
                 current = 'home';
             }
-
             let changed = false;
-
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
                 const wasActive = link.classList.contains('active');
                 let shouldBeActive = false;
-
                 if (current === 'home' && href === '#') {
                     shouldBeActive = true;
                 } else if (href === `#${current}`) {
                     shouldBeActive = true;
                 }
-
                 if (shouldBeActive && !wasActive) {
                     link.classList.add('active');
                     changed = true;
@@ -194,7 +221,6 @@
                     link.classList.remove('active');
                 }
             });
-
             if (changed) {
                 updateIndicator();
             }
